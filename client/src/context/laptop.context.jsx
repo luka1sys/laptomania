@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import { getItem, setItem } from "../../components/utils/localstorage";
+import { getItem, setItem } from "../components/utils/localstorage.js";
 
 const LaptopContext = createContext();
 

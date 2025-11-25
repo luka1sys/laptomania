@@ -2,8 +2,8 @@
 
 
 import { useState } from "react";
-import { useLaptop } from "../context/laptop.context";
-import { useAuth } from "../context/auth.context";
+import { useLaptop } from "../context/laptop.context.jsx";
+import { useAuth } from "../context/auth.context.jsx";
 
 const Laptop = ({ laptop }) => {
     const { deleteLaptop, updateLaptop, addToCart } = useLaptop();

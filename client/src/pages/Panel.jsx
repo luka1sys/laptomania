@@ -1,8 +1,8 @@
 
 import { useEffect, useState } from "react";
-import { useAuth } from "../context/auth.context";
-import { useLaptop } from "../context/laptop.context";
-import Catalog from "./Catalog";
+import { useAuth } from "../context/auth.context.jsx";
+import { useLaptop } from "../context/laptop.context.jsx";
+import Catalog from "./Catalog.jsx";
 
 
 

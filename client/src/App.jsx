@@ -1,11 +1,11 @@
 import { Route, Routes, Link } from "react-router"
 
-import SignUp from "./pages/Signup"
-import Login from "./pages/Login"
-import Panel from "./pages/Panel"
-import Protect from "../components/utils/Protect"
-import Product from "./pages/Catalog"
-import Nav from "./components/UI/Nav"
+import SignUp from "./pages/Signup.jsx"
+import Login from "./pages/Login.jsx"
+import Panel from "./pages/Panel.jsx"
+import Protect from "./components/utils/Protect.jsx"
+import Product from "./pages/Catalog.jsx"
+import Nav from "./components/UI/Nav.jsx"
 
 const Home = () => {
   return (
