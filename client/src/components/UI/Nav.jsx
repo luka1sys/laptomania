@@ -35,49 +35,54 @@ const Nav = () => {
                     </div>
 
                     <div className="flex items-center">
-                        {user ? (
-                            <ul className="flex items-center space-x-2">
-                                <li
-                                    onClick={() => setIsOpen(true)}
-                                    className="text-gray-700 hover:text-indigo-600 px-4 py-2 rounded-xl text-sm font-semibold cursor-pointer relative transition-all duration-300 hover:bg-indigo-50"
-                                >
-                                    Cart
-                                    {cart.length > 0 && (
-                                        <span className="absolute -top-1 -right-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold shadow-lg">
-                                            {
-                                                cart.reduce((prev, cur) => prev + cur.quantity, 0)
-                                            }
-                                        </span>
-                                    )}
-                                </li>
-                                <li>
-                                    <Link to="/panel" className="text-gray-700 hover:text-indigo-600 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 hover:bg-indigo-50">
-                                        Panel
-                                    </Link>
-                                </li>
-                                <li>
-                                    <button
-                                        onClick={logout}
-                                        className="text-gray-700 cursor-pointer hover:text-indigo-600 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 hover:bg-red-50"
-                                    >
-                                        Logout
-                                    </button>
-                                </li>
-                            </ul>
-                        ) : (
-                            <ul className="flex items-center space-x-3">
-                                <li>
-                                    <Link to="/login" className="text-gray-700 hover:text-indigo-600 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 hover:bg-indigo-50">
-                                        Login
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/signup" className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-xl text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
-                                        Sign Up
-                                    </Link>
-                                </li>
-                            </ul>
-                        )}
+                        <ul className="flex items-center space-x-2">
+                            {/* Cart - Available for both guests and logged-in users */}
+                            <li
+                                onClick={() => setIsOpen(true)}
+                                className="text-gray-700 hover:text-indigo-600 px-4 py-2 rounded-xl text-sm font-semibold cursor-pointer relative transition-all duration-300 hover:bg-indigo-50"
+                            >
+                                Cart
+                                {cart.length > 0 && (
+                                    <span className="absolute -top-1 -right-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold shadow-lg">
+                                        {
+                                            cart.reduce((prev, cur) => prev + cur.quantity, 0)
+                                        }
+                                    </span>
+                                )}
+                            </li>
+                            
+                            {/* User-specific navigation */}
+                            {user ? (
+                                <>
+                                    <li>
+                                        <Link to="/panel" className="text-gray-700 hover:text-indigo-600 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 hover:bg-indigo-50">
+                                            Panel
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <button
+                                            onClick={logout}
+                                            className="text-gray-700 cursor-pointer hover:text-indigo-600 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 hover:bg-red-50"
+                                        >
+                                            Logout
+                                        </button>
+                                    </li>
+                                </>
+                            ) : (
+                                <>
+                                    <li>
+                                        <Link to="/login" className="text-gray-700 hover:text-indigo-600 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 hover:bg-indigo-50">
+                                            Login
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/signup" className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-xl text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                            Sign Up
+                                        </Link>
+                                    </li>
+                                </>
+                            )}
+                        </ul>
                     </div>
                 </div>
             </nav>

@@ -82,7 +82,6 @@ export const AuthProvider = ({ children }) => {
                 },
                 body: JSON.stringify(formData),
                 credentials: 'include'
-
             })
             const result = await res.json();
             if (!res.ok) {

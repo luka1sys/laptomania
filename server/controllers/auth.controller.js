@@ -11,7 +11,7 @@ const createSendToken = (user, statusCode, res) => {
     const cookieOptions = {
         expires: new Date(Date.now() + parseInt(process.env.JWT_COOKIE_EXPIRES_IN) * 24 * 60 * 60 * 1000),
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'prod',
+        secure: process.env.NODE_ENV === 'production',
         sameSite: 'None'
     };
     user.password = undefined;
