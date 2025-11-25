@@ -1,10 +1,11 @@
 import { Route, Routes, Link } from "react-router"
-import Nav from "../components/UI/Nav"
+
 import SignUp from "./pages/Signup"
 import Login from "./pages/Login"
 import Panel from "./pages/Panel"
 import Protect from "../components/utils/Protect"
 import Product from "./pages/Catalog"
+import Nav from "./components/UI/Nav"
 
 const Home = () => {
   return (
@@ -82,13 +83,14 @@ function App() {
 
   return (
     <>
+
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="panel" element={<Protect><Panel /></Protect>} />
-        <Route path="laptops" element={<Product/>} />
+        <Route path="laptops" element={<Product />} />
 
       </Routes>
 
