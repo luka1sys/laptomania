@@ -24,10 +24,15 @@ const app = express();
 const cors = require("cors");
 
 app.use(cors({
-    origin: ["https://laptomania-zeta.vercel.app"],
+    origin: process.env.CLIENT_URL,
     credentials: true
 }));
 // cybersecurity - rate limiter
+
+app.use(cookieParser());
+// app.use(mongooseSanitize());
+app.use(express.json());
+app.use(helmet())
 app.use(
     rateLimit({
         windowMs: 2 * 60 * 1000, // 15 minutes
@@ -35,12 +40,9 @@ app.use(
         message: 'Too many requests from this IP, please try again later.'
     })
 );
-// app.use(mongooseSanitize());
-app.use(helmet())
 
 
-app.use(cookieParser());
-app.use(express.json());
+
 // app.use('/laptop/images', express.static(path.join(__dirname, 'uploads/laptops')));
 
 app.use('/api/laptop', laptoprouter);
