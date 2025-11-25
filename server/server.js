@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 // cybersecurity
 //იცავს API-ს ბევრი მოთხოვნებისგან
 // განსაზღვრავს თუ რამდენ მოთხოვნას შეუძლია მომხმარებელი გააკეთოს განსაზღვრულ დროში.
-const rateLimit = require('express-rate-limit');
+// const rateLimit = require('express-rate-limit');
 
 // // იცავს MongoDB-ს ჰაკერული payload-ებისგან (მაგ. $gt, $set, $push).
 // const mongooseSanitize = require('express-mongo-sanitize');
@@ -26,13 +26,13 @@ app.use(cors({
     origin: process.env.CLIENT_URL
 }));
 // cybersecurity - rate limiter
-app.use(
-    rateLimit({
-        windowMs: 2 * 60 * 1000, // 15 minutes
-        max: 5, // limit each IP to 100 requests per windowMs
-        message: 'Too many requests from this IP, please try again later.'
-    })
-);
+// app.use(
+//     rateLimit({
+//         windowMs: 2 * 60 * 1000, // 15 minutes
+//         max: 5, // limit each IP to 100 requests per windowMs
+//         message: 'Too many requests from this IP, please try again later.'
+//     })
+// );
 // app.use(mongooseSanitize());
 app.use(helmet())
 
