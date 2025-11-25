@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 
 import { useState } from 'react';
 
-import { useAuth } from '../../src/context/auth.context';
-import { useLaptop } from '../../src/context/laptop.context';
+import { useAuth } from '../../context/auth.context';
+import { useLaptop } from '../../context/laptop.context';
 // import { X } from 'lucide-react'; // icon for close button
 
 const Nav = () => {

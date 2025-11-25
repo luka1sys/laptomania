@@ -1,5 +1,5 @@
 import { Navigate } from "react-router";
-import { useAuth } from "../../src/context/auth.context"
+import { useAuth } from "../../context/auth.context"
 
 const Protect = ({ children }) => {
 
