@@ -21,9 +21,11 @@ dotenv.config();
 
 const app = express();
 
+const cors = require("cors");
+
 app.use(cors({
-    credentials: true,
-    origin: process.env.CLIENT_URL
+    origin: ["https://laptomania-zeta.vercel.app"],
+    credentials: true
 }));
 // cybersecurity - rate limiter
 app.use(
