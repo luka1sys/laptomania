@@ -20,6 +20,11 @@ dotenv.config();
 
 
 const app = express();
+
+app.use(cors({
+    credentials: true,
+    origin: process.env.CLIENT_URL
+}));
 // cybersecurity - rate limiter
 app.use(
     rateLimit({
@@ -31,10 +36,7 @@ app.use(
 // app.use(mongooseSanitize());
 app.use(helmet())
 
-app.use(cors({
-    credentials: true,
-    origin: process.env.CLIENT_URL
-}));
+
 app.use(cookieParser());
 app.use(express.json());
 // app.use('/laptop/images', express.static(path.join(__dirname, 'uploads/laptops')));
