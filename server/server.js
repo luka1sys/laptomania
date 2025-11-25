@@ -33,7 +33,7 @@ app.use(
         message: 'Too many requests from this IP, please try again later.'
     })
 );
-app.use(mongooseSanitize());
+// app.use(mongooseSanitize());
 app.use(helmet())
 
 
