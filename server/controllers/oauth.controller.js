@@ -15,7 +15,7 @@ const createSendToken = (user, res) => {
         sameSite: 'None'
     });
 
-    return res.redirect(`${"http://localhost:5173"}/panel`);
+    return res.redirect(`${process.env.CLIENT_URL}/panel`);
 };
 
 const getGoogleAuthUrl = (req, res) => {
@@ -49,7 +49,7 @@ const googleCallBack = async (req, res, next) => {
                 Authorization: `Bearer ${access_token}`
             }
         })
-        
+
         const { verified_email, name, email, picture, id } = userInfo.data;
 
 
