@@ -17,7 +17,6 @@ const createSendToken = (user, res) => {
 
     return res.redirect(`${process.env.CLIENT_URL}/panel`);
 };
-
 const getGoogleAuthUrl = (req, res) => {
     const params = new URLSearchParams({
         client_id: process.env.GOOGLE_CLIENT_ID,

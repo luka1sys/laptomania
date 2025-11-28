@@ -161,8 +161,12 @@ export const AuthProvider = ({ children }) => {
             });
         }
     }
+
+    const googleAuth = () =>{
+        window.location.href = `${API_URL}/oauth/google`;
+    }
     return (
-        <authContext.Provider value={{ user,users, signUp, login, logout, getUsers }}>
+        <authContext.Provider value={{ user,users, signUp, login, logout, getUsers, googleAuth }}>
             {children}
         </authContext.Provider>
     )
