@@ -4,6 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const laptoprouter = require('./routes/laptop.routes');
 const authRouter = require('./routes/auth.routes');
+const oauthRouter = require('./routes/oauth.routes');
 const cookieParser = require('cookie-parser');
 // cybersecurity
 //იცავს API-ს ბევრი მოთხოვნებისგან
@@ -46,6 +47,8 @@ app.use(express.json());
 
 app.use('/api/laptop', laptoprouter);
 app.use('/api/auth', authRouter);
+app.use('/api/oauth',oauthRouter);
+
 
 
 

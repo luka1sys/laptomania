@@ -21,7 +21,6 @@ const createSendToken = (user, statusCode, res) => {
 
         message: 'User logged in successfully'
     });
-
 }
 
 
@@ -435,4 +434,4 @@ const logout = catchAsync(async (req, res,) => {
 
 
 // ექსპორტს ვუკეთებთ ფუნქციებსს 
-module.exports = { signUp, login, updateUser, logout, verifyEmail, getUsers }
+module.exports = { signUp, login, updateUser, logout, verifyEmail, getUsers,createSendToken }

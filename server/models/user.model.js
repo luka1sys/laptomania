@@ -21,7 +21,9 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        required: [true, 'Please provide a password'],
+        required: function(){
+            return !this.oauthId
+        },
         minlength: 6,
         maxlength: 20,
         select: false
@@ -45,7 +47,21 @@ const userSchema = mongoose.Schema({
 
         type: Boolean,
         default: true
-    }
+    },
+
+    oauthProvider: {
+        type: String,
+        enum: ["google", "facebook", "github", null],
+        default: null
+    },
+    oauthId: {
+        type: String,
+        default: null
+    },
+    avatar: {
+        type: String,
+        default: null
+    },
 
 }, {
     // როდის მოხდა შექმნა 
