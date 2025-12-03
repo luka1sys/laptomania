@@ -3,7 +3,7 @@ import { UseForm } from "../hooks/useForm.js"
 
 
 const SignUp = () => {
-    const { signUp,googleAuth } = useAuth();
+    const { signUp, googleAuth, githubAuth } = useAuth();
     const [formData, handlechange] = UseForm({
         fullname: '',
         email: '',
@@ -12,9 +12,7 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         signUp(formData);
-
-
-
+        
     }
     return (
         <main className="min-h-screen flex items-center justify-center px-4 py-12">
@@ -71,7 +69,8 @@ const SignUp = () => {
 
                     </form>
                     <button onClick={googleAuth} className="btn-primary w-full">Google</button>
-                    
+                    <button onClick={githubAuth} className="btn-primary w-full">github</button>
+
 
                     <div className="mt-6 text-center">
                         <p className="text-sm text-gray-600">

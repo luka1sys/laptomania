@@ -31,8 +31,9 @@ export const AuthProvider = ({ children }) => {
 
     }, [])
 
-        
 
+
+    
     const signUp = async (formData) => {
         const toastId = toast.loading('signing...');
         try {
@@ -165,8 +166,12 @@ export const AuthProvider = ({ children }) => {
     const googleAuth = () =>{
         window.location.href = `${API_URL}/oauth/google`;
     }
+
+    const githubAuth = () => {
+        window.location.href = `${API_URL}/oauth/github`;
+    }
     return (
-        <authContext.Provider value={{ user,users, signUp, login, logout, getUsers, googleAuth }}>
+        <authContext.Provider value={{ user,users, signUp, login, logout, getUsers, googleAuth, githubAuth }}>
             {children}
         </authContext.Provider>
     )
